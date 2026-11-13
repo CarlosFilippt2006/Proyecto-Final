@@ -1,0 +1,729 @@
+
+/* ==========================================
+   VARIABLES CSS Y CONFIGURACIÓN GLOBAL
+   ========================================== */
+:root {
+    --bg-primary: #f6f2eb;
+    --bg-card: #fffdf9;
+    --text-main: #252b2a;
+    --text-muted: #68716d;
+    --accent: #b9573f;
+    --accent-hover: #98442f;
+    --whatsapp: #25d366;
+    --border-color: #e6ddd1;
+    
+    --font-heading: 'Outfit', sans-serif;
+    --font-body: 'Inter', sans-serif;
+    
+    --spacing-sm: 0.5rem;
+    --spacing-md: 1rem;
+    --spacing-lg: 2rem;
+    --spacing-xl: 4rem;
+    
+    --transition: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-body);
+    background-color: var(--bg-primary);
+    color: var(--text-main);
+    line-height: 1.6;
+}
+
+h1, h2, h3, h4 {
+    font-family: var(--font-heading);
+    font-weight: 700;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section {
+    padding: var(--spacing-xl) 0;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: var(--spacing-lg);
+}
+
+.section-header h2 {
+    font-size: 2.25rem;
+    margin-bottom: var(--spacing-sm);
+    color: var(--text-main);
+}
+
+.section-header p {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+}
+
+/* ==========================================
+   BOTONES Y COMPONENTES REUTILIZABLES
+   ========================================== */
+.btn {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+    border: none;
+    text-align: center;
+}
+
+.btn-primary {
+    background-color: var(--accent);
+    color: #fff;
+}
+
+.btn-primary:hover {
+    background-color: var(--accent-hover);
+    transform: translateY(-2px);
+}
+
+.btn-outline {
+    background-color: transparent;
+    border: 2px solid var(--text-main);
+    color: var(--text-main);
+}
+
+.btn-outline:hover {
+    background-color: var(--text-main);
+    color: var(--bg-primary);
+}
+
+.btn-whatsapp {
+    background-color: var(--whatsapp);
+    color: #fff;
+    width: 100%;
+    margin-top: var(--spacing-md);
+}
+
+.btn-whatsapp:hover {
+    opacity: 0.9;
+}
+
+/* ==========================================
+   HEADER Y NAVEGACIÓN (FLEXBOX)
+   ========================================== */
+.site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(246, 242, 235, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border-color);
+    z-index: 1000;
+    padding: 1rem 0;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.logo span {
+    color: var(--accent);
+}
+
+.main-nav ul {
+    display: flex;
+    gap: 2rem;
+}
+
+.main-nav a {
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+.main-nav a:hover {
+    color: var(--accent);
+}
+
+.main-nav a[aria-current="page"] {
+    color: var(--accent);
+}
+
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.menu-toggle span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: var(--text-main);
+    transition: var(--transition);
+}
+
+/* ==========================================
+   HERO SECTION
+   ========================================== */
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    background: linear-gradient(rgba(31, 35, 33, 0.62), rgba(31, 35, 33, 0.76)), url('../IMG/NIKE AIR MAX 95.jpeg') center/cover no-repeat;
+    text-align: center;
+    padding-top: 80px;
+}
+
+.hero h1 {
+    color: #fffdf9;
+}
+
+.hero p {
+    color: rgba(255, 253, 249, 0.86);
+}
+
+.hero-content {
+    max-width: 800px;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: var(--spacing-md);
+}
+
+.hero p {
+    font-size: 1.2rem;
+    color: #fffdf9;
+    margin-bottom: var(--spacing-lg);
+}
+
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.hero .btn-outline {
+    border-color: #fffdf9;
+    color: #fffdf9;
+}
+
+.hero .btn-outline:hover {
+    background-color: #fffdf9;
+    color: var(--text-main);
+}
+
+.subpage-main {
+    min-height: calc(100vh - 220px);
+    padding-top: 80px;
+}
+
+.page-heading {
+    padding: 4.5rem 0 3.5rem;
+    background: linear-gradient(135deg, #eee7dc, #f6f2eb);
+    text-align: center;
+}
+
+.page-heading .container {
+    max-width: 760px;
+}
+
+.page-heading h1 {
+    margin-bottom: 0.75rem;
+    font-size: 2.75rem;
+}
+
+.page-heading p:last-child {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+}
+
+.eyebrow {
+    margin-bottom: 0.5rem;
+    color: var(--accent);
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.home-links {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 1.5rem;
+}
+
+.home-link-card {
+    padding: 1.75rem;
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    transition: var(--transition);
+}
+
+.home-link-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 14px 30px rgba(75, 55, 39, 0.12);
+}
+
+.home-link-card h3 {
+    margin-bottom: 0.5rem;
+    font-size: 1.35rem;
+}
+
+.home-link-card p {
+    margin-bottom: 1rem;
+    color: var(--text-muted);
+}
+
+.home-link-card span,
+.text-link {
+    color: var(--accent);
+    font-weight: 600;
+}
+
+.story-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(280px, 0.9fr);
+    align-items: center;
+    gap: 3rem;
+}
+
+.story-copy h2,
+.contact-copy h2,
+.contact-detail h2 {
+    margin-bottom: 1rem;
+    font-size: 2rem;
+}
+
+.story-copy p,
+.contact-copy p,
+.contact-detail p {
+    margin-bottom: 1rem;
+    color: var(--text-muted);
+}
+
+.story-image {
+    width: 100%;
+    max-height: 430px;
+    border-radius: 12px;
+    object-fit: cover;
+}
+
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 1.5rem;
+}
+
+.value-card {
+    padding: 1.75rem;
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+}
+
+.value-card h2 {
+    margin-bottom: 0.75rem;
+    font-size: 1.35rem;
+}
+
+.value-card p {
+    color: var(--text-muted);
+}
+
+.page-cta {
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.gallery-item {
+    position: relative;
+    display: block;
+}
+
+.gallery-item::after {
+    position: absolute;
+    inset: 45% 0 0;
+    background: linear-gradient(transparent, rgba(20, 23, 22, 0.78));
+    content: "";
+}
+
+.gallery-item span {
+    position: absolute;
+    right: 1rem;
+    bottom: 1rem;
+    left: 1rem;
+    z-index: 1;
+    color: #fffdf9;
+    font-family: var(--font-heading);
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+
+.contact-panel {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 2rem;
+    max-width: 900px;
+    padding: 2.5rem;
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+}
+
+.contact-detail {
+    padding: 1.5rem;
+    background-color: var(--bg-primary);
+    border-radius: 8px;
+}
+
+.text-link:hover,
+.home-link-card span:hover {
+    color: var(--accent-hover);
+}
+
+/* ==========================================
+   PRODUCTOS DESTACADOS (CSS GRID / FLEXBOX)
+   ========================================== */
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 2rem;
+}
+
+.product-card {
+    background-color: var(--bg-card);
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+    transition: var(--transition);
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 14px 30px rgba(75, 55, 39, 0.12);
+}
+
+.product-image img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    display: block;
+    transition: var(--transition);
+}
+
+.product-card:hover .product-image img {
+    transform: scale(1.05);
+}
+
+.product-info {
+    padding: 1.5rem;
+}
+
+.product-info h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+}
+
+.price {
+    color: var(--accent);
+    font-weight: 700;
+    font-size: 1.1rem;
+    margin-bottom: 0.75rem;
+}
+
+.desc {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+}
+
+/* ==========================================
+   GALERÍA INTERACTIVA
+   ========================================== */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.gallery-item {
+    border-radius: 12px;
+    overflow: hidden;
+    height: 300px;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition);
+}
+
+.gallery-item:hover img {
+    transform: scale(1.08);
+}
+
+/* ==========================================
+   SECCIÓN CONTACTO Y FORMULARIO
+   ========================================== */
+.contact-container {
+    max-width: 600px;
+}
+
+.contact-form {
+    background-color: var(--bg-card);
+    padding: 2.5rem;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.form-group input,
+.form-group textarea {
+    padding: 0.75rem;
+    border-radius: 6px;
+    border: 1px solid var(--border-color);
+    background-color: var(--bg-primary);
+    color: var(--text-main);
+    font-family: var(--font-body);
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--accent);
+}
+
+.error-msg {
+    color: #ef4444;
+    font-size: 0.85rem;
+    margin-top: 0.25rem;
+    display: none;
+}
+
+.form-group.error input,
+.form-group.error textarea {
+    border-color: #ef4444;
+}
+
+.form-group.error .error-msg {
+    display: block;
+}
+
+.form-status {
+    margin-top: 1rem;
+    font-size: 0.95rem;
+    text-align: center;
+}
+
+/* ==========================================
+   FOOTER
+   ========================================== */
+.site-footer {
+    background-color: #eee7dc;
+    border-top: 1px solid var(--border-color);
+    padding-top: 3rem;
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.footer-brand, .footer-newsletter {
+    flex: 1;
+    min-width: 280px;
+}
+
+.footer-brand h3 {
+    color: var(--accent);
+    margin-bottom: 0.5rem;
+}
+
+.footer-brand p, .footer-newsletter p {
+    color: var(--text-muted);
+}
+
+.newsletter-form {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.newsletter-form input {
+    flex: 1;
+    padding: 0.75rem;
+    border-radius: 6px;
+    border: 1px solid var(--border-color);
+    background-color: var(--bg-primary);
+    color: var(--text-main);
+}
+
+.footer-bottom {
+    text-align: center;
+    padding: 1.5rem 0;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+/* ==========================================
+   WIDGETS FLOTANTES (WHATSAPP & BACK TO TOP)
+   ========================================== */
+.whatsapp-float {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: var(--whatsapp);
+    color: #fff;
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    z-index: 999;
+    transition: var(--transition);
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.1);
+}
+
+.back-to-top {
+    position: fixed;
+    bottom: 85px;
+    right: 20px;
+    background-color: var(--bg-card);
+    color: var(--text-main);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid var(--border-color);
+    cursor: pointer;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 998;
+    transition: var(--transition);
+}
+
+.back-to-top.visible {
+    display: flex;
+}
+
+.back-to-top:hover {
+    background-color: var(--accent);
+    border-color: var(--accent);
+}
+
+/* ==========================================
+   MEDIA QUERIES (RESPONSIVIDAD)
+   ========================================== */
+@media (max-width: 900px) {
+    .main-nav {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: var(--bg-primary);
+        border-bottom: 1px solid var(--border-color);
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+    }
+
+    .main-nav.active {
+        max-height: 300px;
+    }
+
+    .main-nav ul {
+        flex-direction: column;
+        align-items: center;
+        padding: 1.5rem 0;
+        gap: 1rem;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+
+    .hero h1 {
+        font-size: 2.25rem;
+    }
+
+    .page-heading h1 {
+        font-size: 2.25rem;
+    }
+
+    .story-layout,
+    .contact-panel {
+        grid-template-columns: 1fr;
+    }
+
+    .newsletter-form {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 520px) {
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hero-buttons .btn {
+        width: min(100%, 280px);
+    }
+
+    .contact-panel {
+        padding: 1.5rem;
+    }
+}
